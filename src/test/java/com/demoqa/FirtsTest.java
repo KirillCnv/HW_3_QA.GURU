@@ -19,7 +19,7 @@ public class FirtsTest {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.browserPosition = "0x0";
-        Configuration.holdBrowserOpen = true;
+        //Configuration.holdBrowserOpen = true;
     }
 
     @Test
@@ -37,7 +37,7 @@ public class FirtsTest {
         $(".react-datepicker__year-select").click();
         $(".react-datepicker__day--024").click();
         $(byText("Sports")).click();
-        $("#subjectsInput").setValue("physical Culture");
+        $("#subjectsInput").setValue("Computer science").pressEnter();
         $("#uploadPicture").uploadFile(new File("src/test/resources/1.jpg"));
         $("#currentAddress").setValue("Russia, Mosсow");
         //$(By.xpath("//h2[text()='" + form + "']//ancestor::div[@class='block-wrapper']")).scrollIntoView(false);
@@ -55,6 +55,7 @@ public class FirtsTest {
                 text("Male"),
                 text("7880852282"),
                 text("24 May,1994"),
+                text("Computer science"),
                 text("Sports"),
                 text("1.jpg"),
                 text("Russia, Mosсow"),
