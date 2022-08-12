@@ -9,8 +9,7 @@ import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class FirtsTest {
 
@@ -19,12 +18,15 @@ public class FirtsTest {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.browserPosition = "0x0";
+
         //Configuration.holdBrowserOpen = true;
     }
 
     @Test
     void autoTest(){
         open("/automation-practice-form");
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#fixedban').remove()");
         $("#firstName").setValue("Kirill");
         $("#lastName").setValue("Chernyshov");
         $("#userEmail").setValue("user@email.com");
